@@ -9,7 +9,7 @@ const geistSans = Geist({
 
 export const metadata: Metadata = {
   title: "Neyo",
-  description: "Neyo is an advanced AI-powered image generator that transforms text prompts into high-quality visuals using cutting-edge generative models. Ideal for creators, developers, and designers looking to explore fast, creative image generation.",
+  description: "Neyo is a powerful AI image generator that turns your ideas into stunning visuals. Create unique art, illustrations, and designs from simple text prompts. Fast, smart, and ideal for creators, marketers, and developers.",
 };
 
 export default function RootLayout({
