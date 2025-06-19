@@ -6,7 +6,14 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "supabase:start": "npx supabase start",
+    "supabase:stop": "npx supabase stop",
+    "supabase:reset": "npx supabase db reset",
+    "supabase:push": "npx supabase db push",
+    "supabase:pull": "npx supabase db pull",
+    "supabase:migration:new": "npx supabase migration new",
+    "supabase:studio": "open http://localhost:54323"
   },
   "dependencies": {
     "@supabase/ssr": "^0.6.1",
