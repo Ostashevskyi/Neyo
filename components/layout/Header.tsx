@@ -7,7 +7,7 @@ import ButtonAuth from "@/components/button/ButtonAuth";
 
 const Header = () => {
   return (
-    <header className="between-flex py-7">
+    <header className="between-flex px-12 py-7">
       <Link href={"/"}>
         <Image
           src={"/logo.webp"}
