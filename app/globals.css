@@ -1,12 +1,21 @@
 @import "tailwindcss";
 
-@layer theme {
-  :root {
-    --primary-black: #000002;
-    --white: #FFFFFF;
-    --primary-blue: #0979F0;
-    --primary-light-blue: #01CCFF;
-  }
+@theme {
+  /* COLORS */
+  --color-mint-500: oklch(0.72 0.11 178);
+  --color-primary-black: #000002;
+  --color-white: #ffffff;
+  --color-primary-blue: #0979f0;
+  --color-light-blue: #01ccff;
+
+  /* TEXT */
+  --text-18: 18px;
+
+  /* SPACING */
+  --spacing-18: 18px;
+
+  /* BORDER RADIUS */
+  --radius-40: 40px;
 }
 
 @layer base {
@@ -14,9 +23,27 @@
 }
 
 @layer components {
-
 }
 
 @layer utilities {
+  /* POSITION UTILITIES */
+  .center-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
+  .between-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .bg-hero-radial {
+    background: radial-gradient(
+      72.92% 72.92% at 50.36% 100%,
+      var(--color-light-blue) 0%,
+      var(--color-primary-blue) 66.59%
+    );
+  }
 }

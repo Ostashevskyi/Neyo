@@ -1,15 +1,18 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Roboto } from "next/font/google";
+
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+import Header from "@/components/layout/Header";
+
+const roboto = Roboto({
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
   title: "Neyo",
-  description: "Neyo is a powerful AI image generator that turns your ideas into stunning visuals. Create unique art, illustrations, and designs from simple text prompts. Fast, smart, and ideal for creators, marketers, and developers.",
+  description:
+    "Neyo is a powerful AI image generator that turns your ideas into stunning visuals. Create unique art, illustrations, and designs from simple text prompts. Fast, smart, and ideal for creators, marketers, and developers.",
 };
 
 export default function RootLayout({
@@ -20,8 +23,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} antialiased`}
+        className={`${roboto.className} bg-primary-black px-14 antialiased`}
       >
+        <Header />
         {children}
       </body>
     </html>
