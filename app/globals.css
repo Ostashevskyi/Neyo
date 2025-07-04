@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Poppins&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -10,16 +11,35 @@
 
   /* TEXT */
   --text-18: 18px;
+  --text-28: 28px;
 
   /* SPACING */
   --spacing-18: 18px;
 
   /* BORDER RADIUS */
   --radius-40: 40px;
+
+  /* MAX WIDTH */
+  --container-page-limit: 1440px;
+  --container-home-hero-text: 624px;
+
+  /* FONTS */
+  --font-orbitron: "Orbitron", sans-serif;
 }
 
 @layer base {
   /* Preflight styles */
+  h1 {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 100%;
+  }
+
+  h2 {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 100%;
+  }
 }
 
 @layer components {
@@ -37,6 +57,13 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+  }
+
+  .center-column-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
   }
 
   .bg-hero-radial {

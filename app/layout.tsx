@@ -4,6 +4,7 @@ import { Roboto } from "next/font/google";
 import "./globals.css";
 
 import Header from "@/components/layout/Header";
+import LimitLayout from "@/components/layout/LimitLayout";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -25,8 +26,10 @@ export default function RootLayout({
       <body
         className={`${roboto.className} bg-primary-black px-14 antialiased`}
       >
-        <Header />
-        {children}
+        <LimitLayout>
+          <Header />
+          {children}
+        </LimitLayout>
       </body>
     </html>
   );
