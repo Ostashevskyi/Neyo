@@ -4,7 +4,7 @@ import { Roboto } from "next/font/google";
 import "./globals.css";
 
 import Header from "@/components/layout/Header";
-import LimitLayout from "@/components/layout/LimitLayout";
+import LimitContainer from "@/components/sections/LimitContainer";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -24,12 +24,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${roboto.className} bg-primary-black px-14 antialiased`}
+        className={`${roboto.className} bg-primary-black antialiased`}
+        data-new-gr-c-s-check-loaded="14.1243.0"
+        data-gr-ext-installed=""
       >
-        <LimitLayout>
+        <LimitContainer>
           <Header />
           {children}
-        </LimitLayout>
+        </LimitContainer>
       </body>
     </html>
   );

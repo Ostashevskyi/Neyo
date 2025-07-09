@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Poppins&display=swap");
 @import "tailwindcss";
+
 
 @theme {
   /* COLORS */
@@ -25,6 +26,10 @@
 
   /* FONTS */
   --font-orbitron: "Orbitron", sans-serif;
+
+  /* LINE HEIGHT */
+  --leading-100: 100%;
+  --leading-150: 150%;
 }
 
 @layer base {
@@ -43,6 +48,46 @@
 }
 
 @layer components {
+  .decoration-circle {
+    position: relative;
+  }
+
+  .decoration-circle::before {
+    content: "";
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    border-radius: 9999px;
+    display: block;
+    background: linear-gradient(
+      170.91deg,
+      rgba(7, 138, 243, 0.2) 8.9%,
+      rgba(115, 115, 115, 0) 93.1%
+    );
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    backdrop-filter: blur(20px);
+  }
+}
+
+.keen-slider__center-slide {
+  border-radius: 100px;
+  background: radial-gradient(
+    72.92% 72.92% at 50.36% 100%,
+    #01ccff 0%,
+    #0979f0 66.59%
+  );
+  padding: 40px;
+  border: none;
+}
+
+.content-wrapper {
+  width: 180px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @layer utilities {
@@ -65,6 +110,8 @@
     justify-content: center;
     flex-direction: column;
   }
+
+  /* BG GRADIENT */
 
   .bg-hero-radial {
     background: radial-gradient(

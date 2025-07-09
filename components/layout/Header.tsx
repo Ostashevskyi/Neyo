@@ -3,11 +3,11 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import ButtonAuth from "@/components/button/ButtonAuth";
+import ButtonAuth from "@/components/ui/button/ButtonAuth";
 
 const Header = () => {
   return (
-    <header className="between-flex px-12 py-7">
+    <header className="between-flex px-14 py-7">
       <Link href={"/"}>
         <Image
           src={"/logo.webp"}
