@@ -46,10 +46,8 @@ const HomeSlider: FC<Props> = ({ setSliderActiveSectionData }) => {
             className={`content-wrapper origin-center rounded-xl border-2 border-white/50 p-4 shadow-[0_0_10px_0_rgba(255,255,255,0.3)] backdrop-blur-[60px]`}
           >
             <Image
-              src={data.image}
+              src={data.src}
               alt={`Service ${idx}`}
-              width={100}
-              height={100}
               className="slider-image h-auto w-full origin-center"
             />
           </div>

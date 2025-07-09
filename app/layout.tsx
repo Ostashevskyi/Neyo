@@ -27,11 +27,10 @@ export default function RootLayout({
         className={`${roboto.className} bg-primary-black antialiased`}
         data-new-gr-c-s-check-loaded="14.1243.0"
         data-gr-ext-installed=""
+        data-gr-ext-disabled="forever"
       >
-        <LimitContainer>
-          <Header />
-          {children}
-        </LimitContainer>
+        <Header />
+        {children}
       </body>
     </html>
   );

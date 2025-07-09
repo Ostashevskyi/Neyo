@@ -1,21 +1,25 @@
 import React from "react";
 
-import ButtonCTA from "@/components/ui/button/ButtonCTA";
+import ButtonCTA from "@/components/ui/buttons/ButtonCTA";
 import HomeSectionWrapper from "@/components/sections/HomeSectionWrapper";
+import LimitContainer from "@/components/sections/LimitContainer";
+import HomeParagraph from "@/components/ui/paragraphs/HomeParagraph";
 
 const HomeHero = () => {
   return (
-    <HomeSectionWrapper className="mb-40 bg-[url(/home/hero-bg.webp)] bg-cover bg-center bg-no-repeat py-72">
-      <h1 className="font-orbitron capitalize">Create the Future with AI</h1>
-      <p className="text-28 leading-100 font-semibold capitalize">
-        All-in-one platform for images, videos & smart answers
-      </p>
-      <p className="max-w-home-hero-text text-center font-medium capitalize">
-        Neyo brings together powerful AI tools — Chat Assistant, Image
-        Generator, and Video Creator — all in one seamless experience.
-      </p>
-      <ButtonCTA>Get Started</ButtonCTA>
-    </HomeSectionWrapper>
+    <LimitContainer>
+      <HomeSectionWrapper className="mb-40 bg-[url(/home/backgrounds/hero-bg.webp)] bg-cover bg-center bg-no-repeat py-72">
+        <h1 className="font-orbitron capitalize">Create the Future with AI</h1>
+        <p className="text-28 leading-100 font-semibold capitalize">
+          All-in-one platform for images, videos & smart answers
+        </p>
+        <HomeParagraph className="max-w-home-hero-text">
+          Neyo brings together powerful AI tools — Chat Assistant, Image
+          Generator, and Video Creator — all in one seamless experience.
+        </HomeParagraph>
+        <ButtonCTA>Get Started</ButtonCTA>
+      </HomeSectionWrapper>
+    </LimitContainer>
   );
 };
 
