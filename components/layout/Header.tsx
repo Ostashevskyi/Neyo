@@ -3,7 +3,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import ButtonAuth from "@/components/ui/button/ButtonAuth";
+import ButtonAuth from "@/components/ui/buttons/ButtonAuth";
 
 const Header = () => {
   return (
