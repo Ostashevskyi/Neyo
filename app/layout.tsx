@@ -1,13 +1,17 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Orbitron, Roboto } from "next/font/google";
 
 import "./globals.css";
 
 import Header from "@/components/layout/Header";
-import LimitContainer from "@/components/sections/LimitContainer";
 
 const roboto = Roboto({
   subsets: ["latin"],
+});
+
+const orbitron = Orbitron({
+  subsets: ["latin"],
+  variable: "--font-orbitron", // для використання в CSS
 });
 
 export const metadata: Metadata = {
@@ -24,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${roboto.className} bg-primary-black antialiased`}
+        className={`${roboto.className} ${orbitron.variable} bg-primary-black antialiased`}
         data-new-gr-c-s-check-loaded="14.1243.0"
         data-gr-ext-installed=""
         data-gr-ext-disabled="forever"

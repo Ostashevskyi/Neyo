@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Poppins&display=swap");
 @import "tailwindcss";
 
 
@@ -24,7 +23,7 @@
   --container-home-hero-text: 624px;
 
   /* FONTS */
-  --font-orbitron: "Orbitron", sans-serif;
+  --font-orbitron: var(--font-orbitron), sans-serif;
 
   /* LINE HEIGHT */
   --leading-100: 100%;
