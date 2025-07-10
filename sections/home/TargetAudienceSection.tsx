@@ -2,11 +2,11 @@ import React from "react";
 
 import Image from "next/image";
 
-import { targetAudienceImages } from "../data/homeData";
+import { targetAudienceImages } from "../../app/data/homeData";
 
 import HomeHeading2 from "@/components/ui/headings/HomeHeading2";
-import HomeSectionWrapper from "@/components/sections/HomeSectionWrapper";
-import LimitContainer from "@/components/sections/LimitContainer";
+import HomeSectionWrapper from "@/components/ui/wrappers/HomeSectionWrapper";
+import LimitContainer from "@/components/ui/wrappers/LimitContainer";
 import HomeParagraph from "@/components/ui/paragraphs/HomeParagraph";
 import ButtonCTA from "@/components/ui/buttons/ButtonCTA";
 

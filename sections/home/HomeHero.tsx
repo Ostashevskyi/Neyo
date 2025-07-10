@@ -1,8 +1,8 @@
 import React from "react";
 
 import ButtonCTA from "@/components/ui/buttons/ButtonCTA";
-import HomeSectionWrapper from "@/components/sections/HomeSectionWrapper";
-import LimitContainer from "@/components/sections/LimitContainer";
+import HomeSectionWrapper from "@/components/ui/wrappers/HomeSectionWrapper";
+import LimitContainer from "@/components/ui/wrappers/LimitContainer";
 import HomeParagraph from "@/components/ui/paragraphs/HomeParagraph";
 
 const HomeHero = () => {

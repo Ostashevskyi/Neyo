@@ -3,6 +3,8 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
+import Logo from "@/public/logo.webp";
+
 import ButtonAuth from "@/components/ui/buttons/ButtonAuth";
 
 const Header = () => {
@@ -10,7 +12,7 @@ const Header = () => {
     <header className="between-flex px-14 py-7">
       <Link href={"/"}>
         <Image
-          src={"/logo.webp"}
+          src={Logo}
           alt="Neyo site logo"
           width={152}
           height={40}
