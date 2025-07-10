@@ -4,28 +4,38 @@ import Image from "next/image";
 
 import { targetAudienceImages } from "../../app/data/homeData";
 
+import ButtonCTA from "@/components/ui/buttons/ButtonCTA";
 import HomeHeading2 from "@/components/ui/headings/HomeHeading2";
-import HomeSectionWrapper from "@/components/ui/wrappers/HomeSectionWrapper";
 import LimitContainer from "@/components/ui/wrappers/LimitContainer";
 import HomeParagraph from "@/components/ui/paragraphs/HomeParagraph";
-import ButtonCTA from "@/components/ui/buttons/ButtonCTA";
+import ResponsiveText from "@/components/ui/paragraphs/ResponsiveText";
+import HomeSectionWrapper from "@/components/ui/wrappers/HomeSectionWrapper";
 
 const TargetAudienceSection = () => {
   return (
     <LimitContainer>
-      <HomeSectionWrapper className="pt-40 pb-50">
+      <HomeSectionWrapper className="md:pt-20 md:pb-30 lg:pt-40 lg:pb-50">
         <HomeHeading2>Made for Creators Like You</HomeHeading2>
 
-        <div className="center-flex w-full gap-20">
+        <div className="center-flex w-full md:gap-9 lg:gap-20">
           {targetAudienceImages.map((image) => (
-            <Image src={image.src} alt={image.alt} key={image.src.src} />
+            <Image
+              src={image.src}
+              alt={image.alt}
+              key={image.src.src}
+              className="max-lg:max-h-20 max-lg:max-w-20"
+            />
           ))}
         </div>
 
-        <HomeParagraph className="h-14 text-xl leading-150 max-w-180 normal-case">
-          Whether you're designing interfaces, writing code, editing visuals or
+        <HomeParagraph className="max-w-180 lg:text-xl leading-150 font-medium md:text-sm normal-case">
+          <ResponsiveText
+            desktop="Whether you're designing interfaces, writing code, editing visuals or
           launching campaigns — NEYO empowers every step of your creative
-          journey.
+          journey."
+            tablet="From design to code to campaigns — NEYO supports your entire creative process"
+            mobile="Design. Code. Visuals. Campaigns. NEYO powers every step"
+          />
         </HomeParagraph>
 
         <ButtonCTA>Start For Free</ButtonCTA>
