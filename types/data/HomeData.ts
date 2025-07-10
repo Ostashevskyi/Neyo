@@ -7,4 +7,6 @@ export interface ISliderSectionData {
     alt: string;
 }
 
-export type TTargetAudienceImages = Pick<ISliderSectionData, "src" | "alt"> 
+export type TTargetAudienceImages = Pick<ISliderSectionData, "src" | "alt">;
+
+export interface ISocialData extends TTargetAudienceImages {};

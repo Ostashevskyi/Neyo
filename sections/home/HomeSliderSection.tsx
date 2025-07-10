@@ -4,15 +4,15 @@ import React, { useState } from "react";
 
 import { motion, AnimatePresence } from "framer-motion";
 
-import { sliderSectionData } from "../data/homeData";
+import { sliderSectionData } from "../../app/data/homeData";
 
 import { ISliderSectionData } from "@/types/data/HomeData";
 
 import ButtonCTA from "@/components/ui/buttons/ButtonCTA";
 import HomeSlider from "@/components/ui/sliders/home/HomeSlider";
 import HomeHeading2 from "@/components/ui/headings/HomeHeading2";
-import LimitContainer from "@/components/sections/LimitContainer";
-import HomeSectionWrapper from "@/components/sections/HomeSectionWrapper";
+import LimitContainer from "@/components/ui/wrappers/LimitContainer";
+import HomeSectionWrapper from "@/components/ui/wrappers/HomeSectionWrapper";
 import HomeParagraph from "@/components/ui/paragraphs/HomeParagraph";
 
 const HomeSliderSection = () => {

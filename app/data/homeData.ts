@@ -1,5 +1,6 @@
 import {
   ISliderSectionData,
+  ISocialData,
   TTargetAudienceImages,
 } from "@/types/data/HomeData";
 
@@ -15,6 +16,11 @@ import MarketerAudience from "@/public/home/target-audience/marketer.webp";
 import CopywriterAudience from "@/public/home/target-audience/copywriter.webp";
 import ContentCreatorAudience from "@/public/home/target-audience/content-creator.webp";
 import StartupAudience from "@/public/home/target-audience/startup.webp";
+
+import FacebookIcon from "@/public/svg/socials/facebook.svg";
+import InstagramIcon from "@/public/svg/socials/instagram.svg";
+import TikTokIcon from "@/public/svg/socials/tiktok.svg";
+import XIcon from "@/public/svg/socials/x.svg";
 
 export const sliderSectionData: ISliderSectionData[] = [
   {
@@ -77,5 +83,24 @@ export const targetAudienceImages: TTargetAudienceImages[] = [
   {
     src: StartupAudience,
     alt: "Icon representing a startup with a lightbulb idea",
+  },
+];
+
+export const socialData: ISocialData[] = [
+  {
+    src: XIcon,
+    alt: "Follow us on X (formerly Twitter)",
+  },
+  {
+    src: InstagramIcon,
+    alt: "Visit our Facebook page",
+  },
+  {
+    src: FacebookIcon,
+    alt: "See our photos on Instagram",
+  },
+  {
+    src: TikTokIcon,
+    alt: "Watch us on TikTok",
   },
 ];
