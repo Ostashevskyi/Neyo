@@ -5,9 +5,13 @@ import React from "react";
 
 const SocialSection = () => {
   return (
-    <div className="flex items-center gap-7">
+    <div className="flex items-center md:gap-5 lg:gap-7">
       {socialData.map((social) => (
-        <ButtonCTA className="w-fit h-fit" key={social.src.src} variant="rounded">
+        <ButtonCTA
+          className="h-fit w-fit"
+          key={social.src.src}
+          variant="rounded"
+        >
           <Image src={social.src} alt={social.alt} />
         </ButtonCTA>
       ))}
