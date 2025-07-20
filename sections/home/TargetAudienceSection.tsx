@@ -28,7 +28,7 @@ const TargetAudienceSection = () => {
           ))}
         </div>
 
-        <HomeParagraph className="max-w-180 lg:text-xl leading-150 font-medium md:text-sm normal-case">
+        <HomeParagraph className="max-w-180 lg:text-xl md:text-base leading-150 font-medium normal-case">
           <ResponsiveText
             desktop="Whether you're designing interfaces, writing code, editing visuals or
           launching campaigns — NEYO empowers every step of your creative

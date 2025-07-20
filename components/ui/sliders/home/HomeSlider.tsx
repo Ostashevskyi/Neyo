@@ -19,7 +19,7 @@ const HomeSlider: FC<Props> = ({ setSliderActiveSectionData }) => {
 
   const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
     loop: true,
-    slides: { perView: 5, spacing: 10, origin: "center" },
+    slides: { perView: 5, spacing: 1, origin: "center" },
     rubberband: true,
     detailsChanged(slider) {
       slidesConfigs(slider);
@@ -35,12 +35,13 @@ const HomeSlider: FC<Props> = ({ setSliderActiveSectionData }) => {
   });
 
   return (
-    <div ref={sliderRef} className="keen-slider decoration-circle h-[420px]">
+    <div ref={sliderRef} className="keen-slider decoration-circle lg:h-[420px] md:h-[260px]">
       {sliderSectionData.map((data, idx) => (
         <div
           key={idx}
-          className={`keen-slider__slide flex cursor-pointer items-center justify-center ${isLoaded ? "visible" : "hidden"}`}
+          className={`keen-slider__slide max-w-fit flex cursor-pointer items-center justify-center ${isLoaded ? "visible" : "hidden"}`}
           onClick={() => slider.current?.moveToIdx(idx)}
+          style={{ maxWidth: slider.current?.slides[idx].clientWidth}}
         >
           <div
             className={`content-wrapper origin-center rounded-xl border-2 border-white/50 p-4 shadow-[0_0_10px_0_rgba(255,255,255,0.3)] backdrop-blur-[60px]`}

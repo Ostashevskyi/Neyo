@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-
 @theme {
   /* COLORS */
   --color-primary-black: #000002;
@@ -67,6 +66,11 @@
     top: 50%;
     transform: translate(-50%, -50%);
     backdrop-filter: blur(20px);
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+      width: 260px;
+      height: 260px;
+    }
   }
 }
 
@@ -79,6 +83,10 @@
   );
   padding: 40px;
   border: none;
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    padding: 32px;
+  }
 }
 
 .content-wrapper {
@@ -87,6 +95,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    width: 144px;
+    height: 144px;
+  }
 }
 
 @layer utilities {
@@ -102,7 +115,7 @@
     align-items: center;
     justify-content: space-between;
   }
-  
+
   .around-flex {
     display: flex;
     align-items: center;

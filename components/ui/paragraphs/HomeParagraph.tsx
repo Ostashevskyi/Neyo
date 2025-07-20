@@ -7,7 +7,7 @@ interface Props {
 
 const HomeParagraph: FC<Props> = ({ children, className }) => {
   return (
-    <p className={`text-center font-medium capitalize ${className}`}>{children}</p>
+    <p className={`text-center font-medium capitalize md:text-base ${className}`}>{children}</p>
   )
 }
 

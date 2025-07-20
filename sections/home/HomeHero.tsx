@@ -9,7 +9,7 @@ import ResponsiveText from "@/components/ui/paragraphs/ResponsiveText";
 const HomeHero = () => {
   return (
     <LimitContainer>
-      <HomeSectionWrapper className="mb-40 bg-[url(/home/backgrounds/hero-bg.webp)] bg-cover bg-center bg-no-repeat lg:py-72 md:py-84">
+      <HomeSectionWrapper className="lg:mb-40 bg-[url(/home/backgrounds/hero-bg.webp)] bg-cover bg-center bg-no-repeat lg:py-72 md:py-84">
         <h1 className="font-orbitron md:text-40 capitalize lg:text-6xl">
           Create the Future with AI
         </h1>
