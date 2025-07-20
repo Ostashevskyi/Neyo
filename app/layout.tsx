@@ -11,7 +11,7 @@ const roboto = Roboto({
 
 const orbitron = Orbitron({
   subsets: ["latin"],
-  variable: "--font-orbitron", // для використання в CSS
+  variable: "--font-orbitron",
 });
 
 export const metadata: Metadata = {

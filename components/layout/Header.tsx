@@ -9,14 +9,9 @@ import ButtonAuth from "@/components/ui/buttons/ButtonAuth";
 
 const Header = () => {
   return (
-    <header className="between-flex px-14 py-7">
+    <header className="between-flex px-15 py-7 md:px-8">
       <Link href={"/"}>
-        <Image
-          src={Logo}
-          alt="Neyo site logo"
-          width={152}
-          height={40}
-        />
+        <Image src={Logo} alt="Neyo site logo" width={152} height={40} />
       </Link>
       <div className="flex gap-6">
         <ButtonAuth variant="default">Log In</ButtonAuth>
