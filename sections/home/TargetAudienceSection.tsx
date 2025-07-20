@@ -22,7 +22,7 @@ const TargetAudienceSection = () => {
             <Image
               src={image.src}
               alt={image.alt}
-              key={image.src.src}
+              key={image.src.src} width={100} height={100}
               className="max-lg:max-h-20 max-lg:max-w-20"
             />
           ))}
