@@ -18,7 +18,7 @@ const TargetAudienceSection = () => {
 
         <div className="center-flex w-full gap-20">
           {targetAudienceImages.map((image) => (
-            <Image src={image.src} alt={image.alt} key={image.src.src} />
+            <Image src={image.src} alt={image.alt} key={image.src.src} width={100} height={100} />
           ))}
         </div>
 
