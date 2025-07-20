@@ -38,11 +38,11 @@ export const sliderSectionData: ISliderSectionData[] = [
     alt: "Icon representing video generation service",
   },
   {
-    title: "Cut Service",
+    title: "Image Editor",
     description:
-      "Easily crop, enhance, and modify visuals with smart AI-powered tools.",
+      "Enhance, transform, and retouch any image with AI-powered precision",
     src: CutService,
-    alt: "Icon representing image editing or cutting service",
+    alt: "Icon representing image editing service",
   },
   {
     title: "Voice Generator",
