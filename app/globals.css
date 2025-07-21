@@ -13,7 +13,6 @@
   --text-40: 40px;
 
   /* SPACING */
-  --spacing-18: 18px;
 
   /* BORDER RADIUS */
   --radius-40: 40px;
@@ -35,13 +34,13 @@
   h1 {
     font-size: 56px;
     font-weight: 700;
-    line-height: 100%;
+    line-height: 1.25;
   }
 
   h2 {
     font-weight: 700;
     font-size: 48px;
-    line-height: 100%;
+    line-height: 1.25;
   }
 }
 
