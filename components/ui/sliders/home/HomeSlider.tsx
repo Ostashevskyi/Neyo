@@ -19,7 +19,12 @@ const HomeSlider: FC<Props> = ({ setSliderActiveSectionData }) => {
 
   const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
     loop: true,
-    slides: { perView: 3, spacing: 1, origin: "center" },
+    slides: { perView: 5, spacing: 1, origin: "center" },
+    breakpoints: {
+      '(max-width: 454px)': {
+        slides: { perView: 3, spacing: 1, origin: "center" }
+      }
+    },
     rubberband: true,
     detailsChanged(slider) {
       slidesConfigs(slider);
