@@ -8,7 +8,7 @@ interface Props {
 const HomeSectionWrapper = ({ className, children }: Props) => {
   return (
     <section
-      className={`center-column-flex text-white md:gap-8 md:px-8 lg:gap-10 lg:px-15 px-4 pt-40 pb-20 gap-7 ${className}`}
+      className={`center-column-flex text-white md:gap-8 md:px-8 lg:gap-10 lg:px-15 px-4 gap-7 ${className}`}
     >
       {children}
     </section>

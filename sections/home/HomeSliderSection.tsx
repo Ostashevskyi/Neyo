@@ -21,7 +21,7 @@ const HomeSliderSection = () => {
 
   return (
     <LimitContainer>
-      <HomeSectionWrapper className="bg-[url(/home/backgrounds/home-slider-bg.webp)] bg-cover bg-center bg-no-repeat lg:py-40 md:py-20">
+      <HomeSectionWrapper className="bg-[url(/home/backgrounds/home-slider-bg.webp)] bg-cover bg-center bg-no-repeat lg:py-40 md:py-20 py-16">
         <AnimatePresence mode="wait">
           <motion.div
             key={sliderActiveSectionData.title}
@@ -32,7 +32,7 @@ const HomeSliderSection = () => {
             className="center-column-flex gap-10"
           >
             <HomeHeading2>{sliderActiveSectionData.title}</HomeHeading2>
-            <HomeParagraph className="max-w-home-hero-text lg:h-14 md:h-12 text-xl leading-150">
+            <HomeParagraph className="max-w-home-hero-text lg:h-14 md:h-12 leading-150">
               {sliderActiveSectionData.description}
             </HomeParagraph>
           </motion.div>

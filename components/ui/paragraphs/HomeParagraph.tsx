@@ -1,14 +1,18 @@
-import React, { FC } from 'react'
+import React, { FC } from "react";
 
 interface Props {
-    children: React.ReactNode;
-    className?: string;
+  children: React.ReactNode;
+  className?: string;
 }
 
 const HomeParagraph: FC<Props> = ({ children, className }) => {
   return (
-    <p className={`text-center font-medium capitalize md:text-base text-sm ${className}`}>{children}</p>
-  )
-}
+    <p
+      className={`text-center text-sm font-normal capitalize md:text-base md:font-medium lg:text-xl ${className}`}
+    >
+      {children}
+    </p>
+  );
+};
 
-export default HomeParagraph
+export default HomeParagraph;
