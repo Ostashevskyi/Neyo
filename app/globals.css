@@ -13,7 +13,6 @@
   --text-40: 40px;
 
   /* SPACING */
-  --spacing-18: 18px;
 
   /* BORDER RADIUS */
   --radius-40: 40px;
@@ -35,13 +34,13 @@
   h1 {
     font-size: 56px;
     font-weight: 700;
-    line-height: 100%;
+    line-height: 1.25;
   }
 
   h2 {
     font-weight: 700;
     font-size: 48px;
-    line-height: 100%;
+    line-height: 1.25;
   }
 }
 
@@ -71,6 +70,11 @@
       width: 260px;
       height: 260px;
     }
+
+    @media (max-width: 767px) {
+      width: 160px;
+      height: 160px;
+    }
   }
 }
 
@@ -87,6 +91,10 @@
   @media (min-width: 768px) and (max-width: 1023px) {
     padding: 32px;
   }
+
+  @media (max-width: 767px) {
+    padding: 20px;
+  }
 }
 
 .content-wrapper {
@@ -99,6 +107,11 @@
   @media (min-width: 768px) and (max-width: 1023px) {
     width: 144px;
     height: 144px;
+  }
+
+  @media (max-width: 767px) {
+    width: 84px;
+    height: 84px;
   }
 }
 

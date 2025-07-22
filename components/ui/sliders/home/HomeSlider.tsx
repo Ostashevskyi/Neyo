@@ -20,6 +20,11 @@ const HomeSlider: FC<Props> = ({ setSliderActiveSectionData }) => {
   const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
     loop: true,
     slides: { perView: 5, spacing: 1, origin: "center" },
+    breakpoints: {
+      '(max-width: 454px)': {
+        slides: { perView: 3, spacing: 1, origin: "center" }
+      }
+    },
     rubberband: true,
     detailsChanged(slider) {
       slidesConfigs(slider);
@@ -35,7 +40,7 @@ const HomeSlider: FC<Props> = ({ setSliderActiveSectionData }) => {
   });
 
   return (
-    <div ref={sliderRef} className="keen-slider decoration-circle lg:h-[420px] md:h-[260px]">
+    <div ref={sliderRef} className="keen-slider decoration-circle lg:h-105 md:h-65 h-40">
       {sliderSectionData.map((data, idx) => (
         <div
           key={idx}
