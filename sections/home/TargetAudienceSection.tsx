@@ -14,21 +14,23 @@ import HomeSectionWrapper from "@/components/ui/wrappers/HomeSectionWrapper";
 const TargetAudienceSection = () => {
   return (
     <LimitContainer>
-      <HomeSectionWrapper className="md:pt-20 md:pb-30 lg:pt-40 lg:pb-50 py-16">
+      <HomeSectionWrapper className="py-16 md:pt-20 md:pb-30 lg:pt-40 lg:pb-50">
         <HomeHeading2>Made for Creators Like You</HomeHeading2>
 
-        <div className="center-flex w-full md:gap-9 lg:gap-20 gap-5">
+        <div className="flex w-full items-center justify-between md:justify-center md:gap-9 lg:gap-20">
           {targetAudienceImages.map((image) => (
             <Image
               src={image.src}
               alt={image.alt}
-              key={image.src.src} width={100} height={100}
-              className="md:max-h-20 md:max-w-20 w-10"
+              key={image.src.src}
+              width={100}
+              height={100}
+              className="w-10 md:h-20 md:w-20"
             />
           ))}
         </div>
 
-        <HomeParagraph className="md:max-w-180 lg:text-xl md:text-base leading-150 font-medium normal-case max-w-60">
+        <HomeParagraph className="max-w-60 leading-150 font-medium normal-case md:max-w-180 md:text-base lg:text-xl">
           <ResponsiveText
             desktop="Whether you're designing interfaces, writing code, editing visuals or
           launching campaigns — NEYO empowers every step of your creative
