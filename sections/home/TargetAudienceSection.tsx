@@ -4,8 +4,8 @@ import Image from "next/image";
 
 import { targetAudienceImages } from "../../app/data/homeData";
 
-import ButtonCTA from "@/components/ui/buttons/ButtonCTA";
 import HomeHeading2 from "@/components/ui/headings/HomeHeading2";
+import RegisterButton from "@/components/ui/buttons/RegisterButton";
 import LimitContainer from "@/components/ui/wrappers/LimitContainer";
 import HomeParagraph from "@/components/ui/paragraphs/HomeParagraph";
 import ResponsiveText from "@/components/ui/paragraphs/ResponsiveText";
@@ -40,7 +40,7 @@ const TargetAudienceSection = () => {
           />
         </HomeParagraph>
 
-        <ButtonCTA>Start For Free</ButtonCTA>
+        <RegisterButton>Start For Free</RegisterButton>
       </HomeSectionWrapper>
     </LimitContainer>
   );

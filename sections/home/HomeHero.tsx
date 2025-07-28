@@ -1,10 +1,10 @@
 import React from "react";
 
-import ButtonCTA from "@/components/ui/buttons/ButtonCTA";
-import HomeSectionWrapper from "@/components/ui/wrappers/HomeSectionWrapper";
+import RegisterButton from "@/components/ui/buttons/RegisterButton";
 import LimitContainer from "@/components/ui/wrappers/LimitContainer";
 import HomeParagraph from "@/components/ui/paragraphs/HomeParagraph";
 import ResponsiveText from "@/components/ui/paragraphs/ResponsiveText";
+import HomeSectionWrapper from "@/components/ui/wrappers/HomeSectionWrapper";
 
 const HomeHero = () => {
   return (
@@ -27,7 +27,7 @@ const HomeHero = () => {
             mobile="Chat, Image & Video tools — powered by Neyo"
           />
         </HomeParagraph>
-        <ButtonCTA>Get Started</ButtonCTA>
+        <RegisterButton>Get Started</RegisterButton>
       </HomeSectionWrapper>
     </LimitContainer>
   );

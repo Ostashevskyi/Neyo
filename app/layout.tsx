@@ -3,8 +3,6 @@ import { Orbitron, Roboto } from "next/font/google";
 
 import "./globals.css";
 
-import Header from "@/components/layout/Header";
-
 const roboto = Roboto({
   subsets: ["latin"],
 });
@@ -33,7 +31,6 @@ export default function RootLayout({
         data-gr-ext-installed=""
         data-gr-ext-disabled="forever"
       >
-        <Header />
         {children}
       </body>
     </html>

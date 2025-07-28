@@ -8,12 +8,12 @@ import { sliderSectionData } from "../../app/data/homeData";
 
 import { ISliderSectionData } from "@/types/data/HomeData";
 
-import ButtonCTA from "@/components/ui/buttons/ButtonCTA";
 import HomeSlider from "@/components/ui/sliders/home/HomeSlider";
 import HomeHeading2 from "@/components/ui/headings/HomeHeading2";
+import RegisterButton from "@/components/ui/buttons/RegisterButton";
 import LimitContainer from "@/components/ui/wrappers/LimitContainer";
-import HomeSectionWrapper from "@/components/ui/wrappers/HomeSectionWrapper";
 import HomeParagraph from "@/components/ui/paragraphs/HomeParagraph";
+import HomeSectionWrapper from "@/components/ui/wrappers/HomeSectionWrapper";
 
 const HomeSliderSection = () => {
   const [sliderActiveSectionData, setSliderActiveSectionData] =
@@ -37,7 +37,7 @@ const HomeSliderSection = () => {
             </HomeParagraph>
           </motion.div>
         </AnimatePresence>
-        <ButtonCTA>Try now</ButtonCTA>
+        <RegisterButton>Try now</RegisterButton>
 
         <HomeSlider setSliderActiveSectionData={setSliderActiveSectionData} />
       </HomeSectionWrapper>

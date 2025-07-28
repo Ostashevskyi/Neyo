@@ -1,7 +1,10 @@
-import { socialData } from "@/app/data/homeData";
-import LinkSocial from "@/components/ui/links/LinksSocial";
-import Image from "next/image";
 import React from "react";
+
+import Image from "next/image";
+
+import { socialData } from "@/app/data/homeData";
+
+import LinkSocial from "@/components/ui/links/LinksSocial";
 
 const SocialSection = () => {
   return (
