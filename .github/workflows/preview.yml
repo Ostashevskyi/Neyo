@@ -46,14 +46,7 @@ jobs:
 
       # --- Запускаємо Next у прод-режимі й чекаємо, поки підніметься ---
       - name: Start Next server
-        run: |
-          nohup npm run start -- -p 3000 >/dev/null 2>&1 &
-          # Очікуємо старту
-          for i in {1..30}; do
-            curl -sSf http://localhost:3000 >/dev/null && echo "Up!" && break
-            echo "Waiting for Next.js to start..."
-            sleep 1
-          done
+        run: npx wait-on http://127.0.0.1:3000
 
       - name: Run Playwright tests (pytest)
         env:
