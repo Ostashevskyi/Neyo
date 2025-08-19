@@ -1,0 +1,80 @@
+name: E2E (Playwright Python)
+
+on:
+  push:
+    branches: [ feat/integrate-CI ]
+  pull_request:
+
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    strategy:
+      fail-fast: false
+      matrix:
+        browser: [chromium, firefox, webkit]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # --- Node для збірки Next.js ---
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install Node deps
+        run: npm ci
+
+      - name: Build Next.js
+        run: npm run build
+
+      # --- Python + Playwright (pytest) ---
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Python deps
+        run: pip install -r requirements.txt
+
+      - name: Install Playwright browsers
+        run: python -m playwright install --with-deps
+
+      # --- Запускаємо Next у прод-режимі й чекаємо, поки підніметься ---
+      - name: Start Next server
+        run: |
+          nohup npm run start -- -p 3000 >/dev/null 2>&1 &
+          # Очікуємо старту
+          for i in {1..30}; do
+            curl -sSf http://localhost:3000 >/dev/null && echo "Up!" && break
+            echo "Waiting for Next.js to start..."
+            sleep 1
+          done
+
+      - name: Run Playwright tests (pytest)
+        env:
+          BASE_URL: "http://localhost:3000"
+        run: |
+          mkdir -p reports
+          pytest -v \
+            --browser ${{ matrix.browser }} \
+            --tracing=retain-on-failure \
+            --screenshot=only-on-failure \
+            --video=retain-on-failure \
+            --junitxml=reports/junit-${{ matrix.browser }}.xml
+
+      # --- Артефакти: трейси/скріни/відео/джуніт ---
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-results-${{ matrix.browser }}
+          path: |
+            test-results
+            playwright-report
+            reports
+          if-no-files-found: ignore
