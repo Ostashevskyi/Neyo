@@ -46,7 +46,7 @@ jobs:
 
       # --- Запускаємо Next у прод-режимі й чекаємо, поки підніметься ---
       - name: Start Next server
-        run: npm run start
+        run: nohup npm run start &
 
       - name: Run Playwright tests (pytest)
         env:
