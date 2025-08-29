@@ -1,5 +1,7 @@
 from playwright.sync_api import Page, expect
 import re
+from tests.support.selectors import header_logo, footer_logo
+
 
 def test_footer_logo_visible(page: Page, base_url: str):
     page.goto(base_url + "/")

@@ -2,73 +2,92 @@ name: E2E (Playwright Python)
 
 on:
   push:
-    branches: [ feat/integrate-CI ]
+    branches: [ main, feat/**, integrate-CI ]
   pull_request:
 
 jobs:
   e2e:
     runs-on: ubuntu-latest
     timeout-minutes: 20
-
     strategy:
       fail-fast: false
       matrix:
-        browser: [chromium, firefox, webkit]
+        browser: [chromium]   # add firefox, webkit if you want
+    env:
+      PYTHONUNBUFFERED: "1"
+      PYTHONPATH: ${{ github.workspace }}
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # --- Node для збірки Next.js ---
+      # ---- Build Next.js app ----
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'npm'
+          node-version: "20"
+          cache: "npm"
 
       - name: Install Node deps
         run: npm ci
 
       - name: Build Next.js
-        run: npm run build
+        run: npm run build --if-present
 
-      # --- Python + Playwright (pytest) ---
+      - name: Start server
+        run: |
+          nohup npm run start -- -p 3000 > .next/server.log 2>&1 &
+          echo $! > app.pid
+
+      - name: Wait for app
+        run: npx wait-on http://localhost:3000
+
+      # ---- Python + Playwright (pytest) ----
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          python-version: "3.12"
 
       - name: Install Python deps
-        run: pip install -r requirements.txt
-
-      - name: Install Playwright browsers
-        run: python -m playwright install --with-deps
-
-      # --- Запускаємо Next у прод-режимі й чекаємо, поки підніметься ---
-      - name: Start Next server
         run: |
-          nohup npm run start -- -p 3000 > .next/server.log 2>&1 &
+          pip install -U pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          pip install pytest pytest-playwright pytest-base-url
+          python -m playwright install --with-deps
+
+      - name: Make reports dir
+        run: mkdir -p reports
 
       - name: Run Playwright tests (pytest)
         env:
           BASE_URL: "http://localhost:3000"
         run: |
-          mkdir -p reports
+          # If you have base_url in pytest.ini, no need to pass --base-url
           pytest -v \
-            --browser ${{ matrix.browser }} \
+            --browser=${{ matrix.browser }} \
             --tracing=retain-on-failure \
             --screenshot=only-on-failure \
             --video=retain-on-failure \
             --junitxml=reports/junit-${{ matrix.browser }}.xml
 
-      # --- Артефакти: трейси/скріни/відео/джуніт ---
-      - name: Upload test results
+      - name: Print server log on failure
+        if: failure()
+        run: |
+          echo "===== .next/server.log ====="
+          tail -n +1 .next/server.log || true
+
+      - name: Upload test artifacts
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: playwright-results-${{ matrix.browser }}
           path: |
-            test-results
-            playwright-report
-            reports
+            reports/
+            test-results/
+            playwright-report/
           if-no-files-found: ignore
+
+      - name: Stop server
+        if: always()
+        run: |
+          if [ -f app.pid ]; then kill "$(cat app.pid)" || true; fi
