@@ -26,7 +26,7 @@ export const sliderSectionData: ISliderSectionData[] = [
   {
     title: "Image Generator",
     description:
-      "Generate high-quality images from just a prompt — fast, easy, and customizable.",
+      "Generate high-quality images from just a prompt — fast, easy, and customizable",
     src: ImageService,
     alt: "Icon representing image generation service",
   },
@@ -46,7 +46,7 @@ export const sliderSectionData: ISliderSectionData[] = [
   },
   {
     title: "Voice Generator",
-    description: "Convert text into natural, expressive voices in seconds.",
+    description: "Convert text into natural, expressive voices in seconds",
     src: VoiceService,
     alt: "Icon representing voice generation service",
   },

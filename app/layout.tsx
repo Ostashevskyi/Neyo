@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Orbitron, Roboto } from "next/font/google";
 
 import "./globals.css";
+import { Toaster } from "sonner";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -26,12 +27,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${roboto.className} ${orbitron.variable} bg-primary-black antialiased`}
+        className={`${roboto.className} ${orbitron.variable} antialiased`}
         data-new-gr-c-s-check-loaded="14.1243.0"
         data-gr-ext-installed=""
         data-gr-ext-disabled="forever"
       >
         {children}
+        <Toaster richColors position="top-right"/>
       </body>
     </html>
   );

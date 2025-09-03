@@ -7,7 +7,7 @@ import Header from "@/components/layout/Header";
 
 export default function Home() {
   return (
-    <>
+    <div className="bg-primary-black">
       <Header />
       <main>
         <HomeHero />
@@ -17,6 +17,6 @@ export default function Home() {
           <Footer />
         </div>
       </main>
-    </>
+    </div>
   );
 }

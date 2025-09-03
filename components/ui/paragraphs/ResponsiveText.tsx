@@ -1,6 +1,5 @@
 "use client";
 
-import { useResponsive } from "@/hooks/useResponsive";
 import React, { FC } from "react";
 
 interface Props {
@@ -9,12 +8,12 @@ interface Props {
   desktop: string;
 }
 
-const ResponsiveText: FC<Props> = ({ desktop, mobile, tablet }) => {
-  const { isMobile, isTablet } = useResponsive();
-
-  if (isMobile) return <>{mobile}</>;
-  if (isTablet) return <>{tablet}</>;
-  return <>{desktop}</>;
-};
+const ResponsiveText: FC<Props> = ({ desktop, tablet, mobile }) => (
+  <>
+    <span className="hidden sm:inline md:hidden">{mobile}</span>
+    <span className="hidden md:inline lg:hidden">{tablet}</span>
+    <span className="hidden lg:inline">{desktop}</span>
+  </>
+);
 
 export default ResponsiveText;
